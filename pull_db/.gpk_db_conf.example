@@ -1,0 +1,10 @@
+# put this file below your home dir
+
+
+export PG_HOST=YOUR_PG_HOST
+export PG_USER=YOUR_PG_USER
+export PG_PASSWORD='YOUR_PG_PASSWORD'
+
+export DBS="gpk_main gpk_event gpk_new"
+export ssh_name='THE_NAME_YOU_SSH_TO_GPK_SERVER'
+
