@@ -6,7 +6,7 @@ local_path="/tmp/$export_filename"
 
 ask_db() {
 	echo Choose which db to export: >&2
-	select option in ${DBS[@]}; do
+	select option in $DBS; do
 		if [ ! -z $option ]; then
 			echo $option
 			return
