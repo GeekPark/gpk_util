@@ -13,6 +13,9 @@ ask_db() {
 		fi
 		echo Invalid choice, choose again >&2
 	done
+	export_filename="$option-$(date +%F)-$RANDOM.psql.xz"
+	remote_path="/tmp/$export_filename"
+	local_path="/tmp/$export_filename"
 }
 
 get_conf() {
@@ -109,6 +112,10 @@ main() {
 	get_conf
 	if ! local_db_found; then
 		db=$(ask_db)
+		export_filename="$db-$(date +%F)-$RANDOM.psql.xz"
+		remote_path="/tmp/$export_filename"
+		local_path="/tmp/$export_filename"
+
 		dump_db "$db"
 		pull_back
 		rm_remote_dump
